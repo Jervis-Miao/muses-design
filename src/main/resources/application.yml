@@ -3,7 +3,7 @@ server:
   http:
     port: 8080
   ssl:
-    key-store: C:\\Users\\jervis\\Desktop\\keystore.p12
+    key-store: classpath:keystore/keystore.p12
     key-store-password: 123456
     key-store-type: PKCS12
     key-alias: tomcat
