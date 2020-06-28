@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cn.muses.design.component.strategy.IStrategy;
-import cn.muses.design.component.strategy.Strategy;
+import cn.muses.design.component.strategy.StrategyAnnotationImpl;
 import cn.muses.design.component.strategy.StrategyManager;
 
 /**
@@ -23,10 +23,10 @@ public class StrategyService {
 
     public String get(String strategy) {
         IStrategy iStrategy;
-        if (null == (iStrategy = strategyManager.get(new Strategy(strategy)))) {
+        if (null == (iStrategy = strategyManager.get(new StrategyAnnotationImpl(strategy)))) {
             return String.format("未找到[%s]所对应的策略", strategy);
         }
         return String.format("策略[%s]的执行结果为: %s", strategy,
-            strategyManager.get(new Strategy(strategy)).doHandle(strategy));
+            strategyManager.get(new StrategyAnnotationImpl(strategy)).doHandle(strategy));
     }
 }

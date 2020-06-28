@@ -5,7 +5,6 @@
 package cn.muses.design.component.strategy;
 
 import java.lang.annotation.Annotation;
-import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -14,36 +13,19 @@ import java.util.stream.Collectors;
 
 /**
  * @author miaoqiang
- * @date 2020/6/24.
+ * @date 2020/6/28.
  */
-public class Strategy implements StrategyAnnotation {
-
-    private String strategy;
-    protected InvocationHandler h;
-
-    public Strategy(String strategy) {
-        this.strategy = strategy;
-    }
-
-    @Override
-    public String strategy() {
-        return this.strategy;
-    }
-
-    @Override
-    public Class<? extends Annotation> annotationType() {
-        return StrategyAnnotation.class;
-    }
+public abstract class AbstractStrategyAnnotation implements Annotation {
 
     @Override
     public boolean equals(Object var1) {
         if (var1 == this) {
             return true;
-        } else if (!(var1 instanceof StrategyAnnotation)) {
+        } else if (!this.annotationType().isInstance(var1)) {
             return false;
         } else {
             Map<String, Object> var0Map = getMemberValues(this);
-            Map<String, Object> var1Map = getMemberValues((StrategyAnnotation) var1);
+            Map<String, Object> var1Map = getMemberValues((Annotation) var1);
             return !var0Map.entrySet().stream().anyMatch(e -> {
                 if (null == e.getValue()) {
                     return null != var1Map.get(e.getKey());
@@ -66,8 +48,8 @@ public class Strategy implements StrategyAnnotation {
         return var1;
     }
 
-    private static Map<String, Object> getMemberValues(StrategyAnnotation annotation) {
-        return Arrays.stream(StrategyAnnotation.class.getDeclaredMethods())
+    private static <T extends Annotation> Map<String, Object> getMemberValues(T annotation) {
+        return Arrays.stream(annotation.annotationType().getDeclaredMethods())
             .collect(Collectors.toMap(m -> m.getName(), m -> {
                 try {
                     return m.invoke(annotation);
