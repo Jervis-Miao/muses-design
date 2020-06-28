@@ -2,14 +2,14 @@
  * Copyright 2019 All rights reserved.
  */
 
-package cn.muses.https.controller;
+package cn.muses.design.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import cn.muses.https.service.StrategyService;
+import cn.muses.design.service.StrategyService;
 
 /**
  * @author jervis

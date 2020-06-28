@@ -2,7 +2,7 @@
  * Copyright 2019 All rights reserved.
  */
 
-package cn.muses.https.component.strategy;
+package cn.muses.design.component.strategy;
 
 import java.lang.annotation.*;
 

@@ -2,14 +2,14 @@
  * Copyright 2019 All rights reserved.
  */
 
-package cn.muses.https.service;
+package cn.muses.design.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import cn.muses.https.component.strategy.IStrategy;
-import cn.muses.https.component.strategy.Strategy;
-import cn.muses.https.component.strategy.StrategyManager;
+import cn.muses.design.component.strategy.IStrategy;
+import cn.muses.design.component.strategy.Strategy;
+import cn.muses.design.component.strategy.StrategyManager;
 
 /**
  * @author miaoqiang

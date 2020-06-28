@@ -2,10 +2,10 @@
  * Copyright 2019 All rights reserved.
  */
 
-package cn.muses.https.component.strategy.impl;
+package cn.muses.design.component.strategy.impl;
 
-import cn.muses.https.component.strategy.IStrategy;
-import cn.muses.https.component.strategy.StrategyAnnotation;
+import cn.muses.design.component.strategy.IStrategy;
+import cn.muses.design.component.strategy.StrategyAnnotation;
 
 /**
  * @author miaoqiang

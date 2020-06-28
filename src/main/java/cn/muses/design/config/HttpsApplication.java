@@ -2,7 +2,7 @@
 Copyright 2019 All rights reserved.
  */
 
-package cn.muses.https.config;
+package cn.muses.design.config;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,7 +13,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @date 2020/6/7.
  */
 @SpringBootApplication
-@ComponentScan("cn.muses.https")
+@ComponentScan("cn.muses.design")
 public class HttpsApplication {
 
     public static void main(String[] args) {
