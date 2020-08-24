@@ -26,7 +26,6 @@ public class StrategyService {
         if (null == (iStrategy = strategyManager.get(new StrategyAnnotationImpl(strategy)))) {
             return String.format("未找到[%s]所对应的策略", strategy);
         }
-        return String.format("策略[%s]的执行结果为: %s", strategy,
-            strategyManager.get(new StrategyAnnotationImpl(strategy)).doHandle(strategy));
+        return String.format("策略[%s]的执行结果为: %s", strategy, iStrategy.doHandle(strategy));
     }
 }
