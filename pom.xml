@@ -16,6 +16,7 @@
 
     <properties>
         <muses-utils.version>1.0-SNAPSHOT</muses-utils.version>
+        <spring-boot-orika-starter.version>1.9.0</spring-boot-orika-starter.version>
     </properties>
 
     <dependencies>
@@ -47,6 +48,13 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <!-- orika -->
+        <dependency>
+            <groupId>net.rakugakibox.spring.boot</groupId>
+            <artifactId>orika-spring-boot-starter</artifactId>
+            <version>${spring-boot-orika-starter.version}</version>
         </dependency>
 
         <!-- 支持WebSocket开发 -->

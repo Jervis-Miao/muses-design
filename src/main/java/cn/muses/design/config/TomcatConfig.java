@@ -2,7 +2,7 @@
  * Copyright 2019 All rights reserved.
  */
 
-package cn.muses.design.config.tomcat;
+package cn.muses.design.config;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -123,7 +123,7 @@ public class TomcatConfig implements ApplicationListener<ContextClosedEvent> {
         Executor executor = connector.getProtocolHandler().getExecutor();
         if (executor instanceof ThreadPoolExecutor) {
             try {
-                ThreadPoolExecutor threadPoolExecutor = (ThreadPoolExecutor) executor;
+                ThreadPoolExecutor threadPoolExecutor = (ThreadPoolExecutor)executor;
                 // 线程池优雅停止(不接收新的请求，等待任务运行完成后关闭线程池)
                 threadPoolExecutor.shutdown();
                 // 线程池堵塞等待一定时间，指定时间内关闭成功则返回true，解除堵塞；否则fasle
